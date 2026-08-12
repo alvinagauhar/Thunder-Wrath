@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7vms2vm00wy5"]
+[gd_scene load_steps=9 format=3 uid="uid://b7vms2vm00wy5"]
 
+[ext_resource type="Script" uid="uid://ckghxkkvrnl6s" path="res://scripts/dino.gd" id="1_4s6ie"]
 [ext_resource type="Texture2D" uid="uid://bd7we1iufjcdx" path="res://assets/dino player/DinoSprites - doux.png" id="1_j5dwh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdm24"]
@@ -44,6 +45,7 @@ animations = [{
 
 [node name="Dino" type="CharacterBody2D"]
 collision_mask = 2
+script = ExtResource("1_4s6ie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
