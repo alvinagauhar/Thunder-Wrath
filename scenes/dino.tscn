@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7vms2vm00wy5"]
+
+[ext_resource type="Texture2D" uid="uid://bd7we1iufjcdx" path="res://assets/dino player/DinoSprites - doux.png" id="1_j5dwh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdm24"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s6ie"]
+atlas = ExtResource("1_j5dwh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybb2o"]
+atlas = ExtResource("1_j5dwh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwydg"]
+atlas = ExtResource("1_j5dwh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mjhv"]
+atlas = ExtResource("1_j5dwh")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_focm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s6ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybb2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwydg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mjhv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}]
+
+[node name="Dino" type="CharacterBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_mdm24")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_focm0")
+animation = &"Idle"
+autoplay = "Idle"
